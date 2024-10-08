@@ -24,7 +24,7 @@ def update_user_in_db(*,username,data:UserUpdateSchema,db:Session):
     is_correct = db.query(User).filter_by(username=username,password=data.password).first()
     if not is_correct :
         raise UserNotFound()
-    db.query(User).update({"password": data.new_password})
+    db.query(User).filter(User.username == username).update({"password": data.new_password})
     db.commit()
     return {"msg":"user is updated"}
     
