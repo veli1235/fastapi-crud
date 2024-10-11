@@ -26,7 +26,7 @@ def delete_user(item: UserDeleteSchema, db: Session = Depends(get_db)):
 
 @app.put("/password")
 def update_user(username, item: UserUpdateSchema, db: Session = Depends(get_db)):
-    message = update_user_in_db(username = username,data=item,db=db)
+    message = update_password_in_db(username = username,data=item,db=db)
     return message
 
 @app.get("/user")
@@ -34,3 +34,7 @@ def get_user(username: str, db: Session = Depends(get_db)):
     message = get_user_from_db(username = username, db = db)
     return message
 
+@app.delete("/users")
+def delete_all_user( db: Session = Depends(get_db)):
+    message = delete_all_user_in_db(db=db)
+    return message
