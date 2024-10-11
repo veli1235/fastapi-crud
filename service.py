@@ -3,7 +3,7 @@ from scheme import *
 from models import User
 from fastapi import HTTPException
 from exception import *
-import psycopg2
+import  psycopg2 
 from settings import DATABASE_URL
 import bcrypt
 
