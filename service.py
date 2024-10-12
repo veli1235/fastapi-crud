@@ -53,7 +53,6 @@ def delete_all_user_in_db(*,db:Session):
     conn = psycopg2.connect(DATABASE_URL)
     cur = conn.cursor()
     cur.execute("DELETE FROM users;")
-
     cur.execute("ALTER SEQUENCE users_id_seq RESTART WITH 1;")
     conn.commit()
     cur.close()
