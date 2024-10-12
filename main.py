@@ -34,6 +34,7 @@ def get_user(username: str, db: Session = Depends(get_db)):
     message = get_user_from_db(username = username, db = db)
     return message
 
+
 @app.delete("/users")
 def delete_all_user( db: Session = Depends(get_db)):
     message = delete_all_user_in_db(db=db)

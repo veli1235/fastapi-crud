@@ -6,6 +6,7 @@ class DetailedHTTPException(HTTPException):
     DETAIL = "server error"
 
     def __init__(self):
+        
         super().__init__(status_code=self.STATUS_CODE,detail=self.DETAIL)
 
 class UserNotFound(DetailedHTTPException):

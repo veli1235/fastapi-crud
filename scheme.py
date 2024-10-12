@@ -14,6 +14,7 @@ class UserDeleteSchema(BaseModel):
         extra = "forbid"
 
 
+
 class UserUpdateSchema(BaseModel):
     
     password: str

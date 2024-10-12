@@ -49,6 +49,7 @@ def get_user_from_db(*,username:str, db: Session):
         raise UserNotFound()
     return {"username":user.username}
 
+
 def delete_all_user_in_db(*,db:Session):
     conn = psycopg2.connect(DATABASE_URL)
     cur = conn.cursor()
